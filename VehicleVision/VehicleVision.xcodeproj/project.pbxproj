@@ -1,0 +1,372 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F8365D127AF6EB800AD3D5E /* VehicleVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365D027AF6EB800AD3D5E /* VehicleVisionApp.swift */; };
+		4F8365D327AF6EB800AD3D5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365D227AF6EB800AD3D5E /* ContentView.swift */; };
+		4F8365D527AF6EB900AD3D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F8365D427AF6EB900AD3D5E /* Assets.xcassets */; };
+		4F8365D827AF6EB900AD3D5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F8365D727AF6EB900AD3D5E /* Preview Assets.xcassets */; };
+		4F8365DF27AF6EFF00AD3D5E /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365DE27AF6EFF00AD3D5E /* Map.swift */; };
+		4F8365E127AF6F3C00AD3D5E /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E027AF6F3C00AD3D5E /* Passenger.swift */; };
+		4F8365E327AF6F5200AD3D5E /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E227AF6F5200AD3D5E /* Station.swift */; };
+		4F8365E527AF6FD000AD3D5E /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E427AF6FD000AD3D5E /* Line.swift */; };
+		4F8365E727AF6FD900AD3D5E /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E627AF6FD900AD3D5E /* Segment.swift */; };
+		4F8365E927AF732C00AD3D5E /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E827AF732C00AD3D5E /* Car.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F8365CD27AF6EB800AD3D5E /* VehicleVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F8365D027AF6EB800AD3D5E /* VehicleVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleVisionApp.swift; sourceTree = "<group>"; };
+		4F8365D227AF6EB800AD3D5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4F8365D427AF6EB900AD3D5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F8365D727AF6EB900AD3D5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4F8365DE27AF6EFF00AD3D5E /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		4F8365E027AF6F3C00AD3D5E /* Passenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
+		4F8365E227AF6F5200AD3D5E /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		4F8365E427AF6FD000AD3D5E /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		4F8365E627AF6FD900AD3D5E /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
+		4F8365E827AF732C00AD3D5E /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F8365CA27AF6EB800AD3D5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F8365C427AF6EB800AD3D5E = {
+			isa = PBXGroup;
+			children = (
+				4F8365CF27AF6EB800AD3D5E /* VehicleVision */,
+				4F8365CE27AF6EB800AD3D5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F8365CE27AF6EB800AD3D5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F8365CD27AF6EB800AD3D5E /* VehicleVision.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F8365CF27AF6EB800AD3D5E /* VehicleVision */ = {
+			isa = PBXGroup;
+			children = (
+				4F8365D027AF6EB800AD3D5E /* VehicleVisionApp.swift */,
+				4F8365D227AF6EB800AD3D5E /* ContentView.swift */,
+				4F8365DE27AF6EFF00AD3D5E /* Map.swift */,
+				4F8365E027AF6F3C00AD3D5E /* Passenger.swift */,
+				4F8365E227AF6F5200AD3D5E /* Station.swift */,
+				4F8365E427AF6FD000AD3D5E /* Line.swift */,
+				4F8365E627AF6FD900AD3D5E /* Segment.swift */,
+				4F8365E827AF732C00AD3D5E /* Car.swift */,
+				4F8365D427AF6EB900AD3D5E /* Assets.xcassets */,
+				4F8365D627AF6EB900AD3D5E /* Preview Content */,
+			);
+			path = VehicleVision;
+			sourceTree = "<group>";
+		};
+		4F8365D627AF6EB900AD3D5E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4F8365D727AF6EB900AD3D5E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F8365CC27AF6EB800AD3D5E /* VehicleVision */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F8365DB27AF6EB900AD3D5E /* Build configuration list for PBXNativeTarget "VehicleVision" */;
+			buildPhases = (
+				4F8365C927AF6EB800AD3D5E /* Sources */,
+				4F8365CA27AF6EB800AD3D5E /* Frameworks */,
+				4F8365CB27AF6EB800AD3D5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VehicleVision;
+			productName = VehicleVision;
+			productReference = 4F8365CD27AF6EB800AD3D5E /* VehicleVision.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F8365C527AF6EB800AD3D5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					4F8365CC27AF6EB800AD3D5E = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 4F8365C827AF6EB800AD3D5E /* Build configuration list for PBXProject "VehicleVision" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F8365C427AF6EB800AD3D5E;
+			productRefGroup = 4F8365CE27AF6EB800AD3D5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F8365CC27AF6EB800AD3D5E /* VehicleVision */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F8365CB27AF6EB800AD3D5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F8365D827AF6EB900AD3D5E /* Preview Assets.xcassets in Resources */,
+				4F8365D527AF6EB900AD3D5E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F8365C927AF6EB800AD3D5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F8365D327AF6EB800AD3D5E /* ContentView.swift in Sources */,
+				4F8365D127AF6EB800AD3D5E /* VehicleVisionApp.swift in Sources */,
+				4F8365E927AF732C00AD3D5E /* Car.swift in Sources */,
+				4F8365E327AF6F5200AD3D5E /* Station.swift in Sources */,
+				4F8365E727AF6FD900AD3D5E /* Segment.swift in Sources */,
+				4F8365E527AF6FD000AD3D5E /* Line.swift in Sources */,
+				4F8365E127AF6F3C00AD3D5E /* Passenger.swift in Sources */,
+				4F8365DF27AF6EFF00AD3D5E /* Map.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4F8365D927AF6EB900AD3D5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F8365DA27AF6EB900AD3D5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F8365DC27AF6EB900AD3D5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VehicleVision/Preview Content\"";
+				DEVELOPMENT_TEAM = 5U8S5KSKHC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = palevichcompany.VehicleVision;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F8365DD27AF6EB900AD3D5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"VehicleVision/Preview Content\"";
+				DEVELOPMENT_TEAM = 5U8S5KSKHC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = palevichcompany.VehicleVision;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F8365C827AF6EB800AD3D5E /* Build configuration list for PBXProject "VehicleVision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F8365D927AF6EB900AD3D5E /* Debug */,
+				4F8365DA27AF6EB900AD3D5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F8365DB27AF6EB900AD3D5E /* Build configuration list for PBXNativeTarget "VehicleVision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F8365DC27AF6EB900AD3D5E /* Debug */,
+				4F8365DD27AF6EB900AD3D5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F8365C527AF6EB800AD3D5E /* Project object */;
+}
