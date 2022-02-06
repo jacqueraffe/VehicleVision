@@ -9,6 +9,7 @@ import Foundation
 
 struct Passenger {
     var destination: Station
+    
     init(destination: Station){
         self.destination = destination
     }

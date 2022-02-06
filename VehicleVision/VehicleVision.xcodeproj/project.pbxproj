@@ -17,6 +17,7 @@
 		4F8365E527AF6FD000AD3D5E /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E427AF6FD000AD3D5E /* Line.swift */; };
 		4F8365E727AF6FD900AD3D5E /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E627AF6FD900AD3D5E /* Segment.swift */; };
 		4F8365E927AF732C00AD3D5E /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E827AF732C00AD3D5E /* Car.swift */; };
+		4FC77F4B27AF796300B5C9C5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC77F4A27AF796300B5C9C5 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		4F8365E427AF6FD000AD3D5E /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		4F8365E627AF6FD900AD3D5E /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		4F8365E827AF732C00AD3D5E /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		4FC77F4A27AF796300B5C9C5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +67,8 @@
 			children = (
 				4F8365D027AF6EB800AD3D5E /* VehicleVisionApp.swift */,
 				4F8365D227AF6EB800AD3D5E /* ContentView.swift */,
-				4F8365DE27AF6EFF00AD3D5E /* Map.swift */,
-				4F8365E027AF6F3C00AD3D5E /* Passenger.swift */,
-				4F8365E227AF6F5200AD3D5E /* Station.swift */,
-				4F8365E427AF6FD000AD3D5E /* Line.swift */,
-				4F8365E627AF6FD900AD3D5E /* Segment.swift */,
-				4F8365E827AF732C00AD3D5E /* Car.swift */,
+				4FC77F4927AF793300B5C9C5 /* Views */,
+				4FC77F4627AF790900B5C9C5 /* Models */,
 				4F8365D427AF6EB900AD3D5E /* Assets.xcassets */,
 				4F8365D627AF6EB900AD3D5E /* Preview Content */,
 			);
@@ -83,6 +81,27 @@
 				4F8365D727AF6EB900AD3D5E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4FC77F4627AF790900B5C9C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F8365E827AF732C00AD3D5E /* Car.swift */,
+				4F8365E627AF6FD900AD3D5E /* Segment.swift */,
+				4F8365E027AF6F3C00AD3D5E /* Passenger.swift */,
+				4F8365E227AF6F5200AD3D5E /* Station.swift */,
+				4F8365E427AF6FD000AD3D5E /* Line.swift */,
+				4F8365DE27AF6EFF00AD3D5E /* Map.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4FC77F4927AF793300B5C9C5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4FC77F4A27AF796300B5C9C5 /* MapView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +176,7 @@
 			files = (
 				4F8365D327AF6EB800AD3D5E /* ContentView.swift in Sources */,
 				4F8365D127AF6EB800AD3D5E /* VehicleVisionApp.swift in Sources */,
+				4FC77F4B27AF796300B5C9C5 /* MapView.swift in Sources */,
 				4F8365E927AF732C00AD3D5E /* Car.swift in Sources */,
 				4F8365E327AF6F5200AD3D5E /* Station.swift in Sources */,
 				4F8365E727AF6FD900AD3D5E /* Segment.swift in Sources */,
@@ -301,7 +321,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -331,7 +351,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

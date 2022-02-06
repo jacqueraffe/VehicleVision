@@ -9,6 +9,7 @@ import Foundation
 
 struct Line {
     var segments: Array<Segment> = Array()
+    
     init(segments: Array<Segment>) {
         self.segments = segments
         }

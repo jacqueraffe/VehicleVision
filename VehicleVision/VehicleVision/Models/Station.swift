@@ -6,10 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct Station{
+class Station{
     var passengers: Array<Passenger>
-    init(){
+    var p: CGPoint
+    
+    init(p: CGPoint){
         passengers = Array()
+        self.p = p
     }
 }
