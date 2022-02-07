@@ -16,5 +16,7 @@ class Segment {
         self.a = a
         self.b = b
         cars = []
+        a.peers.append(b)
+        b.peers.append(a)
     }
 }

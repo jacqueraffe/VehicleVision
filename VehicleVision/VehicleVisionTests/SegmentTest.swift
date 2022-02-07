@@ -1,5 +1,5 @@
 //
-//  VehicleVisionTests.swift
+//  SegmentTest.swift
 //  VehicleVisionTests
 //
 //  Created by Jacqueline Palevich on 2/6/22.
@@ -8,25 +8,29 @@ import XCTest
 
 @testable import VehicleVision
 
-class VehicleVisionTests: XCTestCase {
-    var map: Map!
+class SegmentTest: XCTestCase {
 
     override func setUpWithError() throws {
-         map = testMap()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testConstruction() throws {
+        let a = Station(p: CGPoint(x: 2, y: 7), stationType: .triangle)
+        let b = Station(p: CGPoint(x: 5, y: 3), stationType: .circle)
+        
+        let _ = Segment(a: a, b: b)
+        
+        XCTAssertEqual(a.peers, [b])
+        XCTAssertEqual(b.peers, [a])
     }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

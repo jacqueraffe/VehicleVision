@@ -7,7 +7,11 @@
 
 import Foundation
 
-class Passenger {
+class Passenger: Equatable {
+    static func == (lhs: Passenger, rhs: Passenger) -> Bool {
+        lhs.destination == rhs.destination && lhs.stationType == rhs.stationType
+    }
+    
     var destination: Station
     var stationType: StationType
     
