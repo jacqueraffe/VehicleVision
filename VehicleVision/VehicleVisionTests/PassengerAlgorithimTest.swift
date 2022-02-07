@@ -46,11 +46,24 @@ class PassengerAlgorithimTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testFindPath() throws {
+    func testFindPathAToB() throws {
         let path = try chooseStation(currentStation: a, passengerType: .circle)
         
         XCTAssertEqual(path, [a, b])
     }
+    
+    func testFindPathAToE() throws {
+        let path = try chooseStation(currentStation: a, passengerType: .square)
+        
+        XCTAssertEqual(path, [a, b, c, d, e])
+    }
+    
+    func testFindPathEToD() throws {
+        let path = try chooseStation(currentStation: e, passengerType: .circle)
+        
+        XCTAssertEqual(path, [e, d])
+    }
+
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
