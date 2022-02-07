@@ -7,16 +7,18 @@
 
 import Foundation
 
-class Passenger: Equatable {
-    static func == (lhs: Passenger, rhs: Passenger) -> Bool {
-        lhs.destination == rhs.destination && lhs.stationType == rhs.stationType
-    }
-    
+class Passenger {
     var destination: Station
     var stationType: StationType
     
     init(destination: Station, stationType: StationType){
         self.destination = destination
         self.stationType = stationType
+    }
+}
+
+extension Passenger : Equatable {
+    static func == (lhs: Passenger, rhs: Passenger) -> Bool {
+        lhs.destination == rhs.destination && lhs.stationType == rhs.stationType
     }
 }
