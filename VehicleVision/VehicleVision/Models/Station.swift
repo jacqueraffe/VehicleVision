@@ -37,3 +37,9 @@ extension Station : Equatable {
 extension Station : Identifiable {
     // Identifiable protocol satisfied by var id
 }
+
+extension Station :  CustomStringConvertible{
+    var description: String {
+        "\(id)"
+    }
+}

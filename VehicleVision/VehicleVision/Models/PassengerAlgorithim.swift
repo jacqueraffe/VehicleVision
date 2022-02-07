@@ -8,7 +8,7 @@
 import Foundation
 
 /// chooses closest station of passenger type
-func chooseStation(currentStation: Station, passengerTyper: StationType) throws -> [Station] {
+func chooseStation(currentStation: Station, passengerType: StationType) throws -> [Station] {
     
     return []
 }
