@@ -18,7 +18,19 @@
 		4F8365E727AF6FD900AD3D5E /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E627AF6FD900AD3D5E /* Segment.swift */; };
 		4F8365E927AF732C00AD3D5E /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E827AF732C00AD3D5E /* Car.swift */; };
 		4FC77F4B27AF796300B5C9C5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC77F4A27AF796300B5C9C5 /* MapView.swift */; };
+		4FC77F5427B0AACE00B5C9C5 /* VehicleVisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC77F5327B0AACE00B5C9C5 /* VehicleVisionTests.swift */; };
+		4FC77F5B27B0ABF900B5C9C5 /* StationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC77F5A27B0ABF900B5C9C5 /* StationType.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4FC77F5527B0AACE00B5C9C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F8365C527AF6EB800AD3D5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F8365CC27AF6EB800AD3D5E;
+			remoteInfo = VehicleVision;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4F8365CD27AF6EB800AD3D5E /* VehicleVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,10 +45,20 @@
 		4F8365E627AF6FD900AD3D5E /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		4F8365E827AF732C00AD3D5E /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		4FC77F4A27AF796300B5C9C5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		4FC77F5127B0AACE00B5C9C5 /* VehicleVisionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleVisionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FC77F5327B0AACE00B5C9C5 /* VehicleVisionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleVisionTests.swift; sourceTree = "<group>"; };
+		4FC77F5A27B0ABF900B5C9C5 /* StationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4F8365CA27AF6EB800AD3D5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FC77F4E27B0AACE00B5C9C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -50,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				4F8365CF27AF6EB800AD3D5E /* VehicleVision */,
+				4FC77F5227B0AACE00B5C9C5 /* VehicleVisionTests */,
 				4F8365CE27AF6EB800AD3D5E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				4F8365CD27AF6EB800AD3D5E /* VehicleVision.app */,
+				4FC77F5127B0AACE00B5C9C5 /* VehicleVisionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,8 +89,9 @@
 		4F8365CF27AF6EB800AD3D5E /* VehicleVision */ = {
 			isa = PBXGroup;
 			children = (
-				4F8365D027AF6EB800AD3D5E /* VehicleVisionApp.swift */,
+				4FC77F4C27B0AAA600B5C9C5 /* Tests */,
 				4F8365D227AF6EB800AD3D5E /* ContentView.swift */,
+				4F8365D027AF6EB800AD3D5E /* VehicleVisionApp.swift */,
 				4FC77F4927AF793300B5C9C5 /* Views */,
 				4FC77F4627AF790900B5C9C5 /* Models */,
 				4F8365D427AF6EB900AD3D5E /* Assets.xcassets */,
@@ -92,6 +117,7 @@
 				4F8365E227AF6F5200AD3D5E /* Station.swift */,
 				4F8365E427AF6FD000AD3D5E /* Line.swift */,
 				4F8365DE27AF6EFF00AD3D5E /* Map.swift */,
+				4FC77F5A27B0ABF900B5C9C5 /* StationType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -102,6 +128,21 @@
 				4FC77F4A27AF796300B5C9C5 /* MapView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4FC77F4C27B0AAA600B5C9C5 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		4FC77F5227B0AACE00B5C9C5 /* VehicleVisionTests */ = {
+			isa = PBXGroup;
+			children = (
+				4FC77F5327B0AACE00B5C9C5 /* VehicleVisionTests.swift */,
+			);
+			path = VehicleVisionTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +165,24 @@
 			productReference = 4F8365CD27AF6EB800AD3D5E /* VehicleVision.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4FC77F5027B0AACE00B5C9C5 /* VehicleVisionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FC77F5727B0AACE00B5C9C5 /* Build configuration list for PBXNativeTarget "VehicleVisionTests" */;
+			buildPhases = (
+				4FC77F4D27B0AACE00B5C9C5 /* Sources */,
+				4FC77F4E27B0AACE00B5C9C5 /* Frameworks */,
+				4FC77F4F27B0AACE00B5C9C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FC77F5627B0AACE00B5C9C5 /* PBXTargetDependency */,
+			);
+			name = VehicleVisionTests;
+			productName = VehicleVisionTests;
+			productReference = 4FC77F5127B0AACE00B5C9C5 /* VehicleVisionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -136,6 +195,10 @@
 				TargetAttributes = {
 					4F8365CC27AF6EB800AD3D5E = {
 						CreatedOnToolsVersion = 13.0;
+					};
+					4FC77F5027B0AACE00B5C9C5 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 4F8365CC27AF6EB800AD3D5E;
 					};
 				};
 			};
@@ -153,6 +216,7 @@
 			projectRoot = "";
 			targets = (
 				4F8365CC27AF6EB800AD3D5E /* VehicleVision */,
+				4FC77F5027B0AACE00B5C9C5 /* VehicleVisionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -164,6 +228,13 @@
 			files = (
 				4F8365D827AF6EB900AD3D5E /* Preview Assets.xcassets in Resources */,
 				4F8365D527AF6EB900AD3D5E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FC77F4F27B0AACE00B5C9C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,11 +253,28 @@
 				4F8365E727AF6FD900AD3D5E /* Segment.swift in Sources */,
 				4F8365E527AF6FD000AD3D5E /* Line.swift in Sources */,
 				4F8365E127AF6F3C00AD3D5E /* Passenger.swift in Sources */,
+				4FC77F5B27B0ABF900B5C9C5 /* StationType.swift in Sources */,
 				4F8365DF27AF6EFF00AD3D5E /* Map.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4FC77F4D27B0AACE00B5C9C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FC77F5427B0AACE00B5C9C5 /* VehicleVisionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4FC77F5627B0AACE00B5C9C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F8365CC27AF6EB800AD3D5E /* VehicleVision */;
+			targetProxy = 4FC77F5527B0AACE00B5C9C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4F8365D927AF6EB900AD3D5E /* Debug */ = {
@@ -365,6 +453,52 @@
 			};
 			name = Release;
 		};
+		4FC77F5827B0AACE00B5C9C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U8S5KSKHC;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = palevichcompany.VehicleVisionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VehicleVision.app/VehicleVision";
+			};
+			name = Debug;
+		};
+		4FC77F5927B0AACE00B5C9C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5U8S5KSKHC;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = palevichcompany.VehicleVisionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VehicleVision.app/VehicleVision";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -382,6 +516,15 @@
 			buildConfigurations = (
 				4F8365DC27AF6EB900AD3D5E /* Debug */,
 				4F8365DD27AF6EB900AD3D5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FC77F5727B0AACE00B5C9C5 /* Build configuration list for PBXNativeTarget "VehicleVisionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FC77F5827B0AACE00B5C9C5 /* Debug */,
+				4FC77F5927B0AACE00B5C9C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

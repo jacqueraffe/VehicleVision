@@ -12,10 +12,7 @@ struct MapView: View {
     
     var body: some View {
         Canvas { context, size in
-            context.scaleBy(x: size.width/10.0, y: size.height/20.0)
-            let pixelWidth = 10/size.width
-            let lineWidth = 2*pixelWidth
-            let stationWidth = 10*pixelWidth
+            let lineWidth = 3.0
             for line in map.lines {
                 var path = Path()
                 //draw path
@@ -25,25 +22,44 @@ struct MapView: View {
                     }
                     path.addLine(to: segment.b.p)
                 }
-                context.stroke(path, with: .color(.red), lineWidth: lineWidth)
+                context.stroke(path, with: .color(line.color), lineWidth: lineWidth)
                 
                 //draw points
                 var firstTime: Bool = true
                 for segment in line.segments {
                     if firstTime{
                         firstTime = false
-                        drawStation(context: context, s: segment.a, stationWidth: stationWidth)
+                        drawStation(context: context, s: segment.a)
                     }
-                    drawStation(context: context, s: segment.b, stationWidth: stationWidth)
+                    drawStation(context: context, s: segment.b)
                 }
             }
             
         }
     }
     
-    func drawStation(context: GraphicsContext, s: Station, stationWidth: CGFloat){
-        let w2 = stationWidth*0.5
-        let stationRect = CGRect(x: s.p.x-w2, y: s.p.y-w2, width: stationWidth, height: stationWidth)
-        context.fill(Path(ellipseIn: stationRect), with: .color (.black))
+    func drawStation(context: GraphicsContext, s: Station){
+        let stationWidth = 10.0
+        let lineWidth = 2.5
+        switch s.stationType {
+        case .triangle:
+            let w2 = stationWidth*0.5
+            let stationRect = CGRect(x: s.p.x-w2, y: s.p.y-w2, width: stationWidth, height: stationWidth)
+            let path = Path(roundedRect: stationRect, cornerSize: CGSize(width: 3, height: 3))
+            context.fill(path, with: .color(.white))
+            context.stroke(path, with: .color (.black), lineWidth: lineWidth)
+        case .square:
+            let w2 = stationWidth*0.5
+            let stationRect = CGRect(x: s.p.x-w2, y: s.p.y-w2, width: stationWidth, height: stationWidth)
+            let path = Path(roundedRect: stationRect, cornerSize: .zero)
+            context.fill(path, with: .color(.white))
+            context.stroke(path, with: .color (.black), lineWidth: lineWidth)
+        case .circle:
+            let w2 = stationWidth*0.5
+            let stationRect = CGRect(x: s.p.x-w2, y: s.p.y-w2, width: stationWidth, height: stationWidth)
+            let path = Path(ellipseIn: stationRect)
+            context.fill(path, with: .color(.white))
+            context.stroke(path, with: .color (.black), lineWidth: lineWidth)
+        }
     }
 }

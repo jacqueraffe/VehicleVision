@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Line {
     var segments: Array<Segment> = Array()
+    var color: Color
     
-    init(segments: Array<Segment>) {
+    init(segments: Array<Segment>, color: Color) {
         self.segments = segments
+        self.color = color
         }
 }

@@ -9,8 +9,10 @@ import Foundation
 
 struct Passenger {
     var destination: Station
+    var stationType: StationType
     
-    init(destination: Station){
+    init(destination: Station, stationType: StationType){
         self.destination = destination
+        self.stationType = stationType
     }
 }
