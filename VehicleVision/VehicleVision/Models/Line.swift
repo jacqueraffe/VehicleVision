@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Line {
+class Line {
     var segments: Array<Segment> = Array()
     var color: Color
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Car {
+class Car {
     var passengers : [Passenger]
     var pos: Segment
     // 0 to 1

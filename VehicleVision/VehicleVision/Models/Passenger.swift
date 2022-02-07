@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Passenger {
+class Passenger {
     var destination: Station
     var stationType: StationType
     

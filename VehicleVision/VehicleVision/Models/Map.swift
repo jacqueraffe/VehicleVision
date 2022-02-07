@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Map {
+class Map {
     var lines: [Line]
     
     init() {

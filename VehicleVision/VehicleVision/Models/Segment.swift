@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Segment {
+class Segment {
     var a: Station
     var b: Station
     var cars: [Car]
