@@ -49,7 +49,7 @@ class PassengerAlgorithimTest: XCTestCase {
     func testFindPath() throws {
         let path = try chooseStation(currentStation: a, passengerType: .circle)
         
-        XCTAssertEqual(path, [b])
+        XCTAssertEqual(path, [a, b])
     }
 
     func testPerformanceExample() throws {
