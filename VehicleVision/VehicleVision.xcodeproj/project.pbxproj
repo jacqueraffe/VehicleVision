@@ -121,10 +121,10 @@
 			children = (
 				4F8365E827AF732C00AD3D5E /* Car.swift */,
 				4F8365E627AF6FD900AD3D5E /* Segment.swift */,
+				4F8365DE27AF6EFF00AD3D5E /* Map.swift */,
 				4F8365E027AF6F3C00AD3D5E /* Passenger.swift */,
 				4F8365E227AF6F5200AD3D5E /* Station.swift */,
 				4F8365E427AF6FD000AD3D5E /* Line.swift */,
-				4F8365DE27AF6EFF00AD3D5E /* Map.swift */,
 				4FC77F5A27B0ABF900B5C9C5 /* StationType.swift */,
 				4FC77F5C27B0B4B800B5C9C5 /* PassengerAlgorithim.swift */,
 			);

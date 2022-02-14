@@ -12,7 +12,7 @@ class VehicleVisionTests: XCTestCase {
     var map: Map!
 
     override func setUpWithError() throws {
-         map = testMap()
+         map = testMap1()
     }
 
     override func tearDownWithError() throws {

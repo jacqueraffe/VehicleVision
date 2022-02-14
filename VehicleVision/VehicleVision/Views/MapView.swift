@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MapView: View {
-    @State var map : Map = testMap()
+    @State var map : Map = testMap2()
     
     var body: some View {
         Canvas { context, size in
