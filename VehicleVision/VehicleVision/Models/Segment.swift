@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Segment {
+class Segment : Actor {
     var a: Station
     var b: Station
     var cars: [Car]
@@ -19,4 +19,11 @@ class Segment {
         a.peers.append(b)
         b.peers.append(a)
     }
+    
+    func tick(delta: TimeInterval) {
+        for car in cars {
+            car.tick(delta: delta)
+        }
+    }
+    
 }

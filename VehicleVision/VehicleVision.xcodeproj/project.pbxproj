@@ -17,6 +17,8 @@
 		4F8365E527AF6FD000AD3D5E /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E427AF6FD000AD3D5E /* Line.swift */; };
 		4F8365E727AF6FD900AD3D5E /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E627AF6FD900AD3D5E /* Segment.swift */; };
 		4F8365E927AF732C00AD3D5E /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365E827AF732C00AD3D5E /* Car.swift */; };
+		4F8412F327DE809E0038F1F2 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8412F227DE809E0038F1F2 /* Actor.swift */; };
+		4FB4AA7427B9F4A80072FD65 /* Path+Evaluate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB4AA7327B9F4A80072FD65 /* Path+Evaluate.swift */; };
 		4FC77F4B27AF796300B5C9C5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC77F4A27AF796300B5C9C5 /* MapView.swift */; };
 		4FC77F5427B0AACE00B5C9C5 /* VehicleVisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC77F5327B0AACE00B5C9C5 /* VehicleVisionTests.swift */; };
 		4FC77F5B27B0ABF900B5C9C5 /* StationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC77F5A27B0ABF900B5C9C5 /* StationType.swift */; };
@@ -48,6 +50,8 @@
 		4F8365E427AF6FD000AD3D5E /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		4F8365E627AF6FD900AD3D5E /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		4F8365E827AF732C00AD3D5E /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		4F8412F227DE809E0038F1F2 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		4FB4AA7327B9F4A80072FD65 /* Path+Evaluate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Path+Evaluate.swift"; sourceTree = "<group>"; };
 		4FC77F4A27AF796300B5C9C5 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		4FC77F5127B0AACE00B5C9C5 /* VehicleVisionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VehicleVisionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC77F5327B0AACE00B5C9C5 /* VehicleVisionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleVisionTests.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				4F8365D227AF6EB800AD3D5E /* ContentView.swift */,
 				4F8365D027AF6EB800AD3D5E /* VehicleVisionApp.swift */,
 				4FC77F4927AF793300B5C9C5 /* Views */,
+				4FB4AA7527B9F4BD0072FD65 /* Utils */,
 				4FC77F4627AF790900B5C9C5 /* Models */,
 				4F8365D427AF6EB900AD3D5E /* Assets.xcassets */,
 				4F8365D627AF6EB900AD3D5E /* Preview Content */,
@@ -116,6 +121,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		4FB4AA7527B9F4BD0072FD65 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4FB4AA7327B9F4A80072FD65 /* Path+Evaluate.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		4FC77F4627AF790900B5C9C5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +140,7 @@
 				4F8365E427AF6FD000AD3D5E /* Line.swift */,
 				4FC77F5A27B0ABF900B5C9C5 /* StationType.swift */,
 				4FC77F5C27B0B4B800B5C9C5 /* PassengerAlgorithim.swift */,
+				4F8412F227DE809E0038F1F2 /* Actor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,8 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F8365D327AF6EB800AD3D5E /* ContentView.swift in Sources */,
+				4FB4AA7427B9F4A80072FD65 /* Path+Evaluate.swift in Sources */,
 				4F8365D127AF6EB800AD3D5E /* VehicleVisionApp.swift in Sources */,
 				4FC77F4B27AF796300B5C9C5 /* MapView.swift in Sources */,
+				4F8412F327DE809E0038F1F2 /* Actor.swift in Sources */,
 				4F8365E927AF732C00AD3D5E /* Car.swift in Sources */,
 				4F8365E327AF6F5200AD3D5E /* Station.swift in Sources */,
 				4F8365E727AF6FD900AD3D5E /* Segment.swift in Sources */,

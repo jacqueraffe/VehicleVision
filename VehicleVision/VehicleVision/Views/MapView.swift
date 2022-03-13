@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct MapView: View {
-    @State var map : Map = testMap2()
+    @ObservedObject var map : Map
+    @State var prevDate = Date()
+    let date : Date
     
     var body: some View {
+        canvas
+        
+    }
+    
+    var canvas : some View {
         Canvas { context, size in
             let lineWidth = 3.0
             for line in map.lines {
@@ -24,6 +31,15 @@ struct MapView: View {
                 }
                 context.stroke(path, with: .color(line.color), lineWidth: lineWidth)
                 
+                let numSegments = line.segments.count
+                //draw cars
+                for (i, segment) in line.segments.enumerated() {
+                    for car in segment.cars{
+                        let animationProgress = Double(i)/Double(numSegments) + car.segPos/Double(numSegments)
+                        drawCar(context: context, path: path, animationProgress: animationProgress)
+                    }
+                }
+                
                 //draw points
                 var firstTime: Bool = true
                 for segment in line.segments {
@@ -34,8 +50,25 @@ struct MapView: View {
                     drawStation(context: context, s: segment.b)
                 }
             }
-            
+        }.onChange(of: date){ date in
+            let delta = date.timeIntervalSince(prevDate)
+            prevDate = date
+            map.tick(delta: delta)
         }
+    }
+    
+    func drawCar(context: GraphicsContext, path: Path, animationProgress: Double){
+        var context = context
+        let pos = path.evaluate(at:animationProgress)
+        // Use a lookAhead to have the car smoothly animate around sharp corners
+        let tangentAngle =
+        path.evaluateTangent(at: animationProgress, lookAhead:0.01)
+        let oldTransform = context.transform
+        context.transform = oldTransform
+            .translatedBy(x: pos.x, y: pos.y)
+            .rotated(by:tangentAngle)
+        context.draw(Text("car"), at: CGPoint(x:0, y:-8))
+        context.transform = oldTransform
     }
     
     func drawStation(context: GraphicsContext, s: Station){
