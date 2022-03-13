@@ -22,20 +22,26 @@ struct MapView: View {
             let lineWidth = 3.0
             for line in map.lines {
                 var path = Path()
-                //draw path
+                //draw path and calculate segment fraction starts
+                var pathLengthToStartOfSegment = [Double]()
                 for segment in line.segments {
                     if path.currentPoint == nil {
                         path.move(to: segment.a.p)
                     }
                     path.addLine(to: segment.b.p)
+                    pathLengthToStartOfSegment.append(path.pathLength)
                 }
                 context.stroke(path, with: .color(line.color), lineWidth: lineWidth)
                 
-                let numSegments = line.segments.count
+                pathLengthToStartOfSegment.insert(0, at: 0)
+                
+                let pathLength = pathLengthToStartOfSegment.last!
                 //draw cars
                 for (i, segment) in line.segments.enumerated() {
+                    let segmentBase = pathLengthToStartOfSegment[i]
+                    let segmentLength = pathLengthToStartOfSegment[i+1] - pathLengthToStartOfSegment[i]
                     for car in segment.cars{
-                        let animationProgress = Double(i)/Double(numSegments) + car.segPos/Double(numSegments)
+                        let animationProgress = (pathLengthToStartOfSegment[i] + car.segPos*segmentLength)/pathLength
                         drawCar(context: context, path: path, animationProgress: animationProgress)
                     }
                 }
@@ -71,6 +77,7 @@ struct MapView: View {
         let path = Path(car)
         context.fill(path, with: .color(.black))
         context.transform = oldTransform
+        print(animationProgress)
     }
     
     func drawStation(context: GraphicsContext, s: Station){
