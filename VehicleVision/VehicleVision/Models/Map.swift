@@ -63,12 +63,15 @@ func testMap2() -> Map {
     let a1Tob1 = Segment(a: a1, b: b1)
     let b1ToConnection = Segment(a: b1, b: connection)
     
+    let car1 = Car(pos: a1Tob1, segPos: 0)
+    a1Tob1.cars.append(car1)
+    
     let a2ToConnection = Segment(a: a2, b: connection)
     let ConnectionTob2 = Segment(a: connection, b: b2)
     let b2Toc2 = Segment(a: b2, b: c2)
     
-    let car = Car(pos: a2ToConnection, segPos: 0)
-    a2ToConnection.cars.append(car)
+    let car2 = Car(pos: a2ToConnection, segPos: 0)
+    a2ToConnection.cars.append(car2)
     
     let line1 = Line(segments: [a1Tob1, b1ToConnection], color: .red)
     
