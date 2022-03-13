@@ -67,7 +67,9 @@ struct MapView: View {
         context.transform = oldTransform
             .translatedBy(x: pos.x, y: pos.y)
             .rotated(by:tangentAngle)
-        context.draw(Text("car"), at: CGPoint(x:0, y:-8))
+        let car = CGRect(x: 0, y: 0, width: 15, height: 10)
+        let path = Path(car)
+        context.fill(path, with: .color(.black))
         context.transform = oldTransform
     }
     
