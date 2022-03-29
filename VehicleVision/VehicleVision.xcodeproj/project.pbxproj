@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F639A6027F375A800FF1704 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F639A5F27F375A800FF1704 /* HomeView.swift */; };
 		4F8365D127AF6EB800AD3D5E /* VehicleVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365D027AF6EB800AD3D5E /* VehicleVisionApp.swift */; };
 		4F8365D327AF6EB800AD3D5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365D227AF6EB800AD3D5E /* ContentView.swift */; };
 		4F8365D527AF6EB900AD3D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F8365D427AF6EB900AD3D5E /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F639A5F27F375A800FF1704 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4F8365CD27AF6EB800AD3D5E /* VehicleVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F8365D027AF6EB800AD3D5E /* VehicleVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleVisionApp.swift; sourceTree = "<group>"; };
 		4F8365D227AF6EB800AD3D5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		4FC77F4927AF793300B5C9C5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4F639A5F27F375A800FF1704 /* HomeView.swift */,
 				4FC77F4A27AF796300B5C9C5 /* MapView.swift */,
 			);
 			path = Views;
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F8365D327AF6EB800AD3D5E /* ContentView.swift in Sources */,
+				4F639A6027F375A800FF1704 /* HomeView.swift in Sources */,
 				4FB4AA7427B9F4A80072FD65 /* Path+Evaluate.swift in Sources */,
 				4F8365D127AF6EB800AD3D5E /* VehicleVisionApp.swift in Sources */,
 				4FC77F4B27AF796300B5C9C5 /* MapView.swift in Sources */,

@@ -6,15 +6,17 @@
 //
 
 import SwiftUI
-
+// questions: self is immutable what makes map view immutable, what makes the objects immutable
+// why is mapView immutable and does that apply to other objects
+// @State how does it work to be mutable all of a sudden
 struct MapView: View {
     @ObservedObject var map : Map
+    //state object so prev date stays prev date, stays whole time
     @State var prevDate = Date()
     let date : Date
     
     var body: some View {
         canvas
-        
     }
     
     var canvas : some View {
@@ -38,11 +40,14 @@ struct MapView: View {
                 let pathLength = pathLengthToStartOfSegment.last!
                 //draw cars
                 for (i, segment) in line.segments.enumerated() {
-                    let segmentBase = pathLengthToStartOfSegment[i]
+                    //change to go along path so it can turn
+                    //find length of segment
                     let segmentLength = pathLengthToStartOfSegment[i+1] - pathLengthToStartOfSegment[i]
+        
                     for car in segment.cars{
-                        let animationProgress = (pathLengthToStartOfSegment[i] + car.segPos*segmentLength)/pathLength
-                        drawCar(context: context, path: path, animationProgress: animationProgress)
+                        //where it is
+                        let pathLengthToCarPosition = (pathLengthToStartOfSegment[i] + car.segPos*segmentLength)/pathLength
+                        drawCar(context: context, path: path, animationProgress: pathLengthToCarPosition)
                     }
                 }
                 
@@ -65,19 +70,23 @@ struct MapView: View {
     
     func drawCar(context: GraphicsContext, path: Path, animationProgress: Double){
         var context = context
+        //find out where it is on the path
         let pos = path.evaluate(at:animationProgress)
         // Use a lookAhead to have the car smoothly animate around sharp corners
         let tangentAngle =
         path.evaluateTangent(at: animationProgress, lookAhead:0.01)
+        //save old transform to restore later
         let oldTransform = context.transform
+        // new transform to draw car
         context.transform = oldTransform
             .translatedBy(x: pos.x, y: pos.y)
             .rotated(by:tangentAngle)
         let car = CGRect(x: 0, y: 0, width: 15, height: 10)
         let path = Path(car)
         context.fill(path, with: .color(.black))
+        //draw passengers here
+        //restore
         context.transform = oldTransform
-        print(animationProgress)
     }
     
     func drawStation(context: GraphicsContext, s: Station){
