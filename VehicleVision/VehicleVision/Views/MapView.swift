@@ -67,7 +67,7 @@ struct MapView: View {
             map.tick(delta: delta)
         }
     }
-    
+    //swift syntax research!!
     func drawCar(context: GraphicsContext, path: Path, animationProgress: Double){
         var context = context
         //find out where it is on the path
@@ -85,7 +85,7 @@ struct MapView: View {
         let path = Path(car)
         context.fill(path, with: .color(.black))
         //draw passengers here
-        //restore
+        //restore the transfor here the pen
         context.transform = oldTransform
     }
     
