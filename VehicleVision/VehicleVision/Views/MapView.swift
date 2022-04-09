@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 // questions: self is immutable what makes map view immutable, what makes the objects immutable
 // why is mapView immutable and does that apply to other objects
 // @State how does it work to be mutable all of a sudden
@@ -13,15 +14,35 @@ struct MapView: View {
     @ObservedObject var map : Map
     //state object so prev date stays prev date, stays whole time
     @State var prevDate = Date()
+    @State var line1: Line?
     @State var station1: Station?
     let date : Date
+    
+    //vibrations
+    let generator = UINotificationFeedbackGenerator()
     
     var body: some View {
         canvas
             .gesture(
                 DragGesture()
                     .onChanged { gesture in
-                        station1 = map.closestStation(p: gesture.location)
+                       let station = map.closestStation(p: gesture.location)
+                        if station != station1 {
+                            generator.notificationOccurred(.success)
+                            if let a = station, let b = station1{
+                                let connection = Segment(a: a, b: b)
+                                //TODO: check if connection already exists
+                                if line1 == nil {
+                                    line1 = Line(segments: [connection], color: .red)
+                                    map.lines.append(line1!)
+                                } else {
+                                    line1?.segments.append(connection)
+                                }
+                            }
+                            if station != nil {
+                                station1 = station
+                            }
+                        }
                     }
             )
     }
