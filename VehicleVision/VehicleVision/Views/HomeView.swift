@@ -9,8 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var map : Map = testMap2()
-    @State private var gameMode = false
+    @StateObject var map : Map = testMap3()
+    //for dev purposes, start out true
+    @State private var gameMode = true
     
     var body: some View {
         

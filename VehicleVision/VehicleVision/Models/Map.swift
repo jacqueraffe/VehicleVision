@@ -10,13 +10,11 @@ import SwiftUI
 
 class Map : Actor , ObservableObject {
     @Published var lines: [Line]
+    @Published var unattachedStations: [Station]
     
-    init() {
-        lines = []
-    }
-    
-    init(lines: [Line]){
+    init(lines: [Line] = [], unattachedStations: [Station] = []){
         self.lines = lines
+        self.unattachedStations = unattachedStations
     }
     
     func tick(delta: TimeInterval) {
@@ -79,6 +77,17 @@ func testMap2() -> Map {
     
     
     let map = Map(lines: [line1, line2])
+    
+    return map
+}
+
+/// Most simple basic map with no line to begin with to test drawing lines.
+func testMap3() -> Map {
+    let a = Station(p: CGPoint(x: 40, y: 60), stationType: .circle)
+    let b = Station(p: CGPoint(x: 200, y: 150), stationType: .circle)
+    let c = Station(p: CGPoint(x: 100, y: 150), stationType: .square)
+    
+    let map = Map(unattachedStations: [a, b, c])
     
     return map
 }

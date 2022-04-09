@@ -61,6 +61,10 @@ struct MapView: View {
                     drawStation(context: context, s: segment.b)
                 }
             }
+            //draw unattatched stations
+            for station in map.unattachedStations {
+                drawStation(context: context, s: station)
+            }
         }.onChange(of: date){ date in
             let delta = date.timeIntervalSince(prevDate)
             prevDate = date
