@@ -13,10 +13,17 @@ struct MapView: View {
     @ObservedObject var map : Map
     //state object so prev date stays prev date, stays whole time
     @State var prevDate = Date()
+    @State var station1: Station?
     let date : Date
     
     var body: some View {
         canvas
+            .gesture(
+                DragGesture()
+                    .onChanged { gesture in
+                        station1 = map.closestStation(p: gesture.location)
+                    }
+            )
     }
     
     var canvas : some View {
@@ -94,8 +101,10 @@ struct MapView: View {
     }
     
     func drawStation(context: GraphicsContext, s: Station){
-        let stationWidth = 10.0
+        let selectedStation = s == station1
+        let stationWidth = selectedStation ? 20.0 : 10.0
         let lineWidth = 2.5
+        
         switch s.stationType {
         case .triangle:
             let w2 = stationWidth*0.5

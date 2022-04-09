@@ -12,6 +12,7 @@ class Map : Actor , ObservableObject {
     @Published var lines: [Line]
     @Published var unattachedStations: [Station]
     
+    
     init(lines: [Line] = [], unattachedStations: [Station] = []){
         self.lines = lines
         self.unattachedStations = unattachedStations
@@ -22,7 +23,25 @@ class Map : Actor , ObservableObject {
             line.tick(delta: delta)
         }
     }
+    
+    func closestStation(p: CGPoint) -> Station? {
+        var allStations = unattachedStations
+        for line in lines {
+            for segment in line.segments {
+                if !allStations.contains(segment.a){
+                    allStations.append(segment.a)
+                }
+                if !allStations.contains(segment.b){
+                    allStations.append(segment.b)
+                }
+                
+            }
+            
+        }
+        return findNearest(stations: allStations, p: p, maxDistance: 40)
+    }
 }
+
 
 
 func testMap1() -> Map {
@@ -44,7 +63,7 @@ func testMap1() -> Map {
     let line2 = Line(segments: [cTod, dToe], color: .yellow)
     
     let map = Map(lines: [line1, line2])
-
+    
     return map
 }
 

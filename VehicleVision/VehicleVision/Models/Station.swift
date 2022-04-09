@@ -43,3 +43,25 @@ extension Station :  CustomStringConvertible{
         "\(id)"
     }
 }
+
+func distanceBetween(p1: CGPoint, p2: CGPoint) -> CGFloat {
+    let dx = p2.x - p1.x
+    let dy = p1.y - p2.y
+    return sqrt(dx * dx + dy * dy)
+}
+
+func findNearest(stations: [Station], p: CGPoint, maxDistance: CGFloat) -> Station? {
+    var closestStation: Station?
+    var smallestDistance = CGFloat.infinity
+    for station in stations {
+        let curDistance = distanceBetween(p1: p, p2: station.p)
+        if  curDistance < smallestDistance {
+            smallestDistance = curDistance
+            closestStation = station
+        }
+    }
+    if smallestDistance < maxDistance{
+        return closestStation
+    }
+    return nil
+}
