@@ -14,22 +14,28 @@ struct MapView: View {
     @ObservedObject var map : Map
     //state object so prev date stays prev date, stays whole time
     @State var prevDate = Date()
+    //make a deeicated line drawing struct to have fewer fields, only only applicable for drawing a line, make that clear
     @State var line1: Line?
     @State var station1: Station?
     let date : Date
     
     //vibrations
     let generator = UINotificationFeedbackGenerator()
+
     
+    //code not organized chornoligacally so make it easier to read, and number it
     var body: some View {
         canvas
             .gesture(
                 DragGesture()
-                    .onChanged { gesture in
-                       let station = map.closestStation(p: gesture.location)
+                    .onChanged { action in
+                        //step1 got close to a station
+                       let station = map.closestStation(p: action.location)
+                        //Step3: selected second station
                         if station != station1 {
+                            //TODO: test on real device
                             generator.notificationOccurred(.success)
-                            if let a = station, let b = station1{
+                            if let a = station, let b = station1 {
                                 let connection = Segment(a: a, b: b)
                                 //TODO: check if connection already exists
                                 if line1 == nil {
@@ -39,10 +45,15 @@ struct MapView: View {
                                     line1?.segments.append(connection)
                                 }
                             }
+                            //step2: first station has been selected
                             if station != nil {
                                 station1 = station
                             }
                         }
+                    }
+                    .onEnded{ action in
+                        station1 = nil
+                        line1 = nil
                     }
             )
     }
@@ -71,11 +82,35 @@ struct MapView: View {
                     //change to go along path so it can turn
                     //find length of segment
                     let segmentLength = pathLengthToStartOfSegment[i+1] - pathLengthToStartOfSegment[i]
-        
-                    for car in segment.cars{
+                    
+                    var carsToBeMovedToNextSegment = [Int]()
+                    for (j, car) in segment.cars.enumerated(){
                         //where it is
                         let pathLengthToCarPosition = (pathLengthToStartOfSegment[i] + car.segPos*segmentLength)/pathLength
                         drawCar(context: context, path: path, animationProgress: pathLengthToCarPosition)
+                        if car.atEndOfSegment {
+                            carsToBeMovedToNextSegment.append(j)
+                        }
+                    }
+                    for j in carsToBeMovedToNextSegment.reversed(){
+                        let car = segment.cars.remove(at: j)
+                        //change num passengers here
+                        if car.travelingTowards1 {
+                            if i == line.segments.count-1 {
+                                car.travelingTowards1.toggle()
+                                line.segments[i].cars.append(car)
+                            } else {
+                                line.segments[i+1].cars.append(car)
+                            }
+                        } else {
+                            if i == 0 {
+                                car.travelingTowards1.toggle()
+                                line.segments[i].cars.append(car)
+                            } else {
+                                line.segments[i-1].cars.append(car)
+                            }
+                        }
+                        car.segPos = car.begOfSeg
                     }
                 }
                 

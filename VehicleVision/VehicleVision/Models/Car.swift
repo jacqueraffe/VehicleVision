@@ -15,6 +15,23 @@ class Car : Actor {
     var travelingTowards1 : Bool
     // change in segmentpos per sec
     var speed: Double
+    var atEndOfSegment : Bool {
+        segPos == endOfSeg
+    }
+    var begOfSeg : Double {
+        if travelingTowards1 {
+            return 0.0
+        } else {
+            return 1.0
+        }
+    }
+    var endOfSeg : Double {
+        if travelingTowards1 {
+            return 1.0
+        } else {
+            return 0.0
+        }
+    }
     
     init(pos: Segment, segPos: Double){
         passengers = []
@@ -25,7 +42,12 @@ class Car : Actor {
     }
     
     func tick(delta: TimeInterval) {
-        segPos = min(segPos+speed*delta, 1)
+        if travelingTowards1{
+            segPos = min(segPos+speed*delta, 1)
+        } else {
+            segPos = max(segPos-speed*delta, 0)
+        }
+        
     }
     
 }

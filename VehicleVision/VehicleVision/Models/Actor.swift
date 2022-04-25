@@ -9,5 +9,4 @@ import Foundation
 
 protocol Actor {
     func tick(delta: TimeInterval)
-    
 }
