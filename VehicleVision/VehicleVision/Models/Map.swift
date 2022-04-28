@@ -12,11 +12,13 @@ import SwiftUI
 class Map : Actor , ObservableObject {
     @Published var lines: [Line]
     @Published var unattachedStations: [Station]
+    @Published var unattachedPassengers: [Passenger]
     
     
-    init(lines: [Line] = [], unattachedStations: [Station] = []){
+    init(lines: [Line] = [], unattachedStations: [Station] = [], unattachedPassengers: [Passenger] = []){
         self.lines = lines
         self.unattachedStations = unattachedStations
+        self.unattachedPassengers = unattachedPassengers
     }
     
     func tick(delta: TimeInterval) {
@@ -35,9 +37,7 @@ class Map : Actor , ObservableObject {
                 if !allStations.contains(segment.b){
                     allStations.append(segment.b)
                 }
-                
             }
-            
         }
         return findNearest(stations: allStations, p: p, maxDistance: 40)
     }
