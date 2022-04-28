@@ -22,12 +22,14 @@ struct MapView: View {
     
     
     @State var makeTrains : Bool?
+    @State var p = CGPoint(x: 0,y: 0)
     
     var body: some View {
         canvas
             .gesture(
                 DragGesture()
                     .onChanged { action in
+                        p = action.location
                         makeLine(action: action)
                         calculateMakeTrain(action: action)
                     }
@@ -222,9 +224,9 @@ struct MapView: View {
     }
     
     func drawMakeTrains(context: GraphicsContext){
-        let car = CGRect(x: 340, y: 392.5, width: 15, height: 10)
+        let car = CGRect(x: p.x, y: p.y, width: 15, height: 10)
         let path = Path(car)
-        context.fill(path, with: .color(.green))
+        context.fill(path, with: .color(.gray))
     }
     
     func calculateMakeTrain(action:  DragGesture.Value){
