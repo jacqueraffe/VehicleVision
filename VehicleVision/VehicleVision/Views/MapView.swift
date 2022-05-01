@@ -20,23 +20,15 @@ struct MapView: View {
     //vibrations
     let generator = UINotificationFeedbackGenerator()
     
-    
-    @State var makeTrains : Bool?
-    @State var p = CGPoint(x: 0,y: 0)
+    @GestureState private var dragState = DragState.inactive
     
     var body: some View {
         canvas
             .gesture(
                 DragGesture()
-                    .onChanged { action in
-                        p = action.location
-                        makeLine(action: action)
-                        calculateMakeTrain(action: action)
-                    }
-                    .onEnded{ action in
-                        station1 = nil
-                        line1 = nil
-                        makeTrains = false
+                    .updating($dragState){ currentState, gestureState, transaction in
+                        makeLine(action: currentState)
+                        gestureState = calculateMakeTrain(action: currentState)
                     }
             )
     }
@@ -45,10 +37,8 @@ struct MapView: View {
         Canvas { context, size in
             drawMap(context: context)
             drawTrainButton(context: context)
-            if makeTrains != nil {
-                if makeTrains! {
-                    drawMakeTrains(context: context)
-                }
+            if case let .makeTrains(p: p) = dragState {
+                drawMakeTrains(context: context, p: p)
             }
         }.onChange(of: date){ date in
             let delta = date.timeIntervalSince(prevDate)
@@ -223,21 +213,35 @@ struct MapView: View {
         }
     }
     
-    func drawMakeTrains(context: GraphicsContext){
+    func drawMakeTrains(context: GraphicsContext, p: CGPoint){
         let car = CGRect(x: p.x, y: p.y, width: 15, height: 10)
         let path = Path(car)
         context.fill(path, with: .color(.gray))
     }
     
-    func calculateMakeTrain(action:  DragGesture.Value){
+    func calculateMakeTrain(action:  DragGesture.Value) -> DragState{
         let l = action.location
         let dx = l.x - 347.5
         let dy = l.y - 397.5
         let dist = sqrt(dx * dx + dy * dy)
-        if dist <= 45 {
-            makeTrains = true
+        if dist >= 30 {
+            return .makeTrains(p: action.location)
+        } else {
+            return .inactive
         }
         
     }
     
+    func calculateSwitchLine(action:  DragGesture.Value, path: Path){
+        let l = action.location
+        //switchLine = path.contains(l)
+    }
+    
+}
+
+enum DragState {
+    case inactive
+    case makeTrains (p : CGPoint)
+    case switchLine
+    case makeLine
 }
