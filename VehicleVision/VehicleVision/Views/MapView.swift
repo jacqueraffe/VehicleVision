@@ -12,9 +12,6 @@ struct MapView: View {
     @ObservedObject var map : Map
     //state object so prev date stays prev date, stays whole time
     @State var prevDate = Date()
-    //make a deeicated line drawing struct to have fewer fields, only only applicable for drawing a line, make that clear
-    @State var line1: Line?
-    @State var station1: Station?
     let date : Date
     
     //vibrations
@@ -27,8 +24,23 @@ struct MapView: View {
             .gesture(
                 DragGesture()
                     .updating($dragState){ currentState, gestureState, transaction in
-                        makeLine(action: currentState)
-                        gestureState = calculateMakeTrain(action: currentState)
+                        switch gestureState {
+                        case .inactive:
+                            gestureState = makeLine(action: currentState)
+                            if case .inactive = gestureState {
+                                let (nearTrainButton, gState) = calculateMakeTrain(action: currentState)
+                                if nearTrainButton {
+                                    gestureState = gState
+                                }
+                            }
+                        case .makeLine:
+                            gestureState = makeLine(action: currentState)
+                        case .makeTrains:
+                            let (_, gState) = calculateMakeTrain(action: currentState)
+                            gestureState = gState
+                        case .switchLine:
+                            break
+                        }
                     }
             )
     }
@@ -87,7 +99,7 @@ struct MapView: View {
     }
     
     func drawStation(context: GraphicsContext, s: Station){
-        let selectedStation = s == station1
+        let selectedStation = isStationSelected(s: s)
         let stationWidth = selectedStation ? 20.0 : 10.0
         let lineWidth = 2.5
         
@@ -110,6 +122,14 @@ struct MapView: View {
             let path = Path(ellipseIn: stationRect)
             context.fill(path, with: .color(.white))
             context.stroke(path, with: .color (.black), lineWidth: lineWidth)
+        }
+    }
+    
+    func isStationSelected(s: Station) -> Bool {
+        if case let .makeLine (station, _) = dragState {
+            return s == station
+        } else {
+            return false
         }
     }
     
@@ -187,30 +207,29 @@ struct MapView: View {
         
     }
     
-    func makeLine(action:  DragGesture.Value){
-        //step1 got close to a station
-        let station = map.closestStation(p: action.location)
-        if station != nil {
-            //Step3: selected second station
-            if station != station1 {
-                //step2: first station has been selected
-                if station != nil {
-                    station1 = station
-                }
-                //TODO: test on real device
-                generator.notificationOccurred(.success)
-                if let a = station, let b = station1 {
-                    let connection = Segment(a: a, b: b)
+    func makeLine(action:  DragGesture.Value) -> DragState{
+        if let station = map.closestStation(p: action.location) {
+            switch dragState {
+            case .inactive:
+                return .makeLine(station: station, line: nil)
+            case .makeLine(station: let station0, line: var line0):
+                if station0 != station {
+                    generator.notificationOccurred(.success)
+                    let connection = Segment(a: station0, b: station)
                     //TODO: check if connection already exists
-                    if line1 == nil {
-                        line1 = Line(segments: [connection], color: .red)
-                        map.lines.append(line1!)
+                    if line0 == nil {
+                        line0 = Line(segments: [connection], color: .red)
+                        map.lines.append(line0!)
                     } else {
-                        line1?.segments.append(connection)
+                        line0?.segments.append(connection)
                     }
                 }
+                return .makeLine(station: station, line: line0)
+            default :
+                return .inactive
             }
         }
+        return .inactive
     }
     
     func drawMakeTrains(context: GraphicsContext, p: CGPoint){
@@ -219,29 +238,24 @@ struct MapView: View {
         context.fill(path, with: .color(.gray))
     }
     
-    func calculateMakeTrain(action:  DragGesture.Value) -> DragState{
+    /// Bool is true if you are near the train button
+    func calculateMakeTrain(action:  DragGesture.Value) -> (Bool, DragState){
         let l = action.location
         let dx = l.x - 347.5
         let dy = l.y - 397.5
         let dist = sqrt(dx * dx + dy * dy)
-        if dist >= 30 {
-            return .makeTrains(p: action.location)
-        } else {
-            return .inactive
-        }
-        
+        return (dist <= 30, .makeTrains(p: action.location) )
     }
     
-    func calculateSwitchLine(action:  DragGesture.Value, path: Path){
-        let l = action.location
-        //switchLine = path.contains(l)
-    }
-    
+    //            func calculateSwitchLine(action:  DragGesture.Value, path: Path){
+    //                let l = action.location
+    //                //switchLine = path.contains(l)
+    //            }
 }
-
 enum DragState {
     case inactive
     case makeTrains (p : CGPoint)
     case switchLine
-    case makeLine
+    // Line is nil until the second station appears
+    case makeLine (station : Station, line: Line?)
 }
