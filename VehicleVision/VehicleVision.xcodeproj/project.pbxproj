@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F21E71B283DEAE400CB3894 /* Path+HitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F21E71A283DEAE400CB3894 /* Path+HitTest.swift */; };
+		4F21E71D283DF64A00CB3894 /* ClosestPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F21E71C283DF64A00CB3894 /* ClosestPoint.swift */; };
 		4F639A6027F375A800FF1704 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F639A5F27F375A800FF1704 /* HomeView.swift */; };
 		4F8365D127AF6EB800AD3D5E /* VehicleVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365D027AF6EB800AD3D5E /* VehicleVisionApp.swift */; };
 		4F8365D327AF6EB800AD3D5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8365D227AF6EB800AD3D5E /* ContentView.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F21E71A283DEAE400CB3894 /* Path+HitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Path+HitTest.swift"; sourceTree = "<group>"; };
+		4F21E71C283DF64A00CB3894 /* ClosestPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosestPoint.swift; sourceTree = "<group>"; };
 		4F639A5F27F375A800FF1704 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4F8365CD27AF6EB800AD3D5E /* VehicleVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VehicleVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F8365D027AF6EB800AD3D5E /* VehicleVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleVisionApp.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				4FB4AA7327B9F4A80072FD65 /* Path+Evaluate.swift */,
+				4F21E71A283DEAE400CB3894 /* Path+HitTest.swift */,
+				4F21E71C283DF64A00CB3894 /* ClosestPoint.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -278,11 +284,13 @@
 				4F639A6027F375A800FF1704 /* HomeView.swift in Sources */,
 				4FB4AA7427B9F4A80072FD65 /* Path+Evaluate.swift in Sources */,
 				4F8365D127AF6EB800AD3D5E /* VehicleVisionApp.swift in Sources */,
+				4F21E71D283DF64A00CB3894 /* ClosestPoint.swift in Sources */,
 				4FC77F4B27AF796300B5C9C5 /* MapView.swift in Sources */,
 				4F8412F327DE809E0038F1F2 /* Actor.swift in Sources */,
 				4F8365E927AF732C00AD3D5E /* Car.swift in Sources */,
 				4F8365E327AF6F5200AD3D5E /* Station.swift in Sources */,
 				4F8365E727AF6FD900AD3D5E /* Segment.swift in Sources */,
+				4F21E71B283DEAE400CB3894 /* Path+HitTest.swift in Sources */,
 				4F8365E527AF6FD000AD3D5E /* Line.swift in Sources */,
 				4F8365E127AF6F3C00AD3D5E /* Passenger.swift in Sources */,
 				4FC77F5D27B0B4B800B5C9C5 /* PassengerAlgorithim.swift in Sources */,

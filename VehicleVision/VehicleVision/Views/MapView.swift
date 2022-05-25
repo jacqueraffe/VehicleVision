@@ -8,6 +8,10 @@
 import SwiftUI
 import UIKit
 
+// goals: make train, debug make line
+// also make test map for demo
+// line menu
+
 struct MapView: View {
     @ObservedObject var map : Map
     //state object so prev date stays prev date, stays whole time
@@ -26,7 +30,7 @@ struct MapView: View {
                     .updating($dragState){ currentState, gestureState, transaction in
                         switch gestureState {
                         case .inactive:
-                            gestureState = makeLine(action: currentState)
+                            gestureState = makeLineMethod(action: currentState)
                             if case .inactive = gestureState {
                                 let (nearTrainButton, gState) = calculateMakeTrain(action: currentState)
                                 if nearTrainButton {
@@ -34,14 +38,22 @@ struct MapView: View {
                                 }
                             }
                         case .makeLine:
-                            gestureState = makeLine(action: currentState)
+                            gestureState = makeLineMethod(action: currentState)
                         case .makeTrains:
                             let (_, gState) = calculateMakeTrain(action: currentState)
                             gestureState = gState
-                        case .switchLine:
+                        case .deleteSegment:
                             break
                         }
                     }
+//                    .onEnded({ gestureState in
+//                        switch gestureState. {
+//                        case .makeTrains:
+//                            break
+//                        default :
+//                            break
+//                        }
+//                    })
             )
     }
     
@@ -207,7 +219,8 @@ struct MapView: View {
         
     }
     
-    func makeLine(action:  DragGesture.Value) -> DragState{
+    // returns dragState which will be .inactive if not near line
+    func makeLineMethod(action:  DragGesture.Value) -> DragState{
         if let station = map.closestStation(p: action.location) {
             switch dragState {
             case .inactive:
@@ -247,15 +260,39 @@ struct MapView: View {
         return (dist <= 30, .makeTrains(p: action.location) )
     }
     
+    func pickTrainPositionOnLine(p: CGPoint) -> (s: Segment, parametricDist: CGFloat)? {
+        var s: Segment?
+        var minActualDist: CGFloat?
+        var minParametericDist: CGFloat?
+        for line in map.lines {
+            for segment in line.segments {
+                let closestPointResult = closestPoint(p0: segment.a.p, p1: segment.b.p, l: p)
+                if closestPointResult.distFromLine < minActualDist ?? CGFloat.infinity {
+                    minParametericDist = closestPointResult.parametricDistance
+                    minActualDist = closestPointResult.distFromLine
+                    s = segment
+                }
+            }
+        }
+        if let s = s, let minParametericDist = minParametericDist {
+            return (s, minParametericDist)
+        }
+        return nil
+    }
+    
     //            func calculateSwitchLine(action:  DragGesture.Value, path: Path){
     //                let l = action.location
     //                //switchLine = path.contains(l)
     //            }
 }
+
 enum DragState {
     case inactive
     case makeTrains (p : CGPoint)
-    case switchLine
+    //TODO: if near line, can take segment away
+    case deleteSegment
     // Line is nil until the second station appears
     case makeLine (station : Station, line: Line?)
 }
+
+
