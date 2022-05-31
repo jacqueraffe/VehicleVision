@@ -111,3 +111,55 @@ func testMap3() -> Map {
     
     return map
 }
+
+func demoMap() -> Map {
+    // line1 assets
+    let a1 = Station(p: CGPoint(x: 100, y: 250), stationType: .circle)
+    let a2 = Station(p: CGPoint(x: 150, y: 300), stationType: .circle)
+    
+    let connection1 = Station(p: CGPoint(x: 200, y: 320), stationType: .triangle)
+    
+    let a1Toa2 = Segment(a: a1, b: a2)
+    let a2ToConnection1 = Segment(a: a2, b: connection1)
+    
+    let car1 = Car(pos: a1Toa2, segPos: 0)
+    a1Toa2.cars.append(car1)
+    
+    //line2 assets
+    let b1 = Station(p: CGPoint(x: 220, y: 480), stationType: .square)
+    let b2 = Station(p: CGPoint(x: 75, y: 350), stationType: .square)
+    let b3 = Station(p: CGPoint(x: 50, y: 400), stationType: .square)
+    
+    let b1ToConnection1 = Segment(a: b1, b: connection1)
+    let Connection1Tob2 = Segment(a: connection1, b: b2)
+    let b2Tob3 = Segment(a: b2, b: b3)
+    
+    let car2 = Car(pos: a2ToConnection1, segPos: 0)
+    b1ToConnection1.cars.append(car2)
+    
+    // line3 asseets
+    let c1 = Station(p: CGPoint(x: 320, y: 250), stationType: .square)
+    let c2 = Station(p: CGPoint(x: 275, y: 300), stationType: .square)
+    let c3 = Station(p: CGPoint(x: 150, y: 375), stationType: .square)
+    
+    let c1Toc2 = Segment(a: c1, b: c2)
+    let c2ToConnection1 = Segment(a: c2, b: connection1)
+    let Connection1Toc3 = Segment(a: connection1, b: c3)
+    
+    let car3 = Car(pos: c2ToConnection1, segPos: 0)
+    Connection1Toc3.cars.append(car3)
+    
+    //lines
+    
+    let line1 = Line(segments: [a1Toa2, a2ToConnection1], color: .red)
+    
+    let line2 = Line(segments: [b1ToConnection1, Connection1Tob2, b2Tob3], color: .yellow)
+    
+    let line3 = Line(segments: [c1Toc2, c2ToConnection1, Connection1Toc3], color: .blue)
+    
+    
+    let map = Map(lines: [line1, line2, line3])
+    
+    return map
+}
+

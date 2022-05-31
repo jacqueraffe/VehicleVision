@@ -46,8 +46,9 @@ struct MapView: View {
                             break
                         }
                     }
+//                //dig more into documentation figure out how to mb extract info
 //                    .onEnded({ gestureState in
-//                        switch gestureState. {
+//                        switch gestureState {
 //                        case .makeTrains:
 //                            break
 //                        default :

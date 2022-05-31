@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var map : Map = testMap2()
+    @StateObject var map : Map = demoMap()
     //for dev purposes, start out true
     @State private var gameMode = true
     
