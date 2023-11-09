@@ -218,6 +218,7 @@ struct MapView: View {
     
     func drawPassengers (context: GraphicsContext){
         
+    
     }
     
     // returns dragState which will be .inactive if not near line
@@ -232,7 +233,7 @@ struct MapView: View {
                     let connection = Segment(a: station0, b: station)
                     //TODO: check if connection already exists
                     if line0 == nil {
-                        line0 = Line(segments: [connection], color: .red)
+                        line0 = Line(segments: [connection], color: .green)
                         map.lines.append(line0!)
                     } else {
                         line0?.segments.append(connection)
@@ -297,3 +298,28 @@ enum DragState {
 }
 
 
+//demo:
+/*
+ logic:
+ explain geometry and draggin stuff, don't explain swift concepts
+ talk about enum to keep track of state, but don't go into detail about what each thing means
+ 
+ 
+ what my app is made of:
+ my data structures
+ 
+ demo will have code in background
+ 
+ well:
+ I learned animation
+ better understanding of swift/views
+ Because of this project + mr broman: Forced to try to actually understand what was happening i my code. for example look back through retros to find example
+ learned more this semester
+ specefic examples
+ 
+ badly:
+ didn't accomplish
+ kinda got senioritus
+ \
+ ask about target learning in Your project objectives / product purpose  section
+ */

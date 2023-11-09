@@ -11,7 +11,7 @@ struct HomeView: View {
     
     @StateObject var map : Map = demoMap()
     //for dev purposes, start out true
-    @State private var gameMode = true
+    @State private var gameMode = false
     
     var body: some View {
         
