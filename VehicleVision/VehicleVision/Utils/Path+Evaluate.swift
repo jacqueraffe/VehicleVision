@@ -59,7 +59,7 @@ extension Path {
     /// taking a tiny peice of the line, gets the bound rect of that, find dist, doesnt matter that its curved cuz so tiny
     /// littlePieceOfPathFromAToB a path
   var pathLength : CGFloat {
-    let epsilon = 1e-7
+    let epsilon = 1e-1
     let sampleParameter = 0.0
     let a = sampleParameter
     let b = sampleParameter + epsilon
